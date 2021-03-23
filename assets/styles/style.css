@@ -9,6 +9,13 @@ body {
   font-size: 70px;
 }
 
+.logo {
+  animation-name: girafa;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
 .nav-menu {
   display: inline;
 }
@@ -22,9 +29,20 @@ body {
 /* block: ocupa todo o espaço horizontal disponível */
 .nav-menu li {
   display: inline;
-  padding: 0 15px 0 15px;
+  padding: 0 7px;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
 }
 
+.nav-menu li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.nav-menu li:not(:last-child) {
+  border-right: 1px solid #fff;
+}
+
+/* Seletor descendente */
 .nav-menu li a {
   text-decoration: none;
   color: #fff;
@@ -35,4 +53,42 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  margin-bottom: 10%;
+  align-self: flex-end;
+}
+
+tr {
+  background-color: white;
+  color: black;
+}
+
+tbody > tr:nth-child(odd) > td:first-child {
+  background-color: gray;
+}
+
+tbody > tr:nth-child(even) > td:nth-child(2) {
+  background-color: gray;
+}
+
+tbody > tr:nth-child(odd) > td:last-child {
+  background-color: gray;
+}
+
+@keyframes girafa {
+  0% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  100% {
+    transform: rotate3d(30, 30, 30, 360deg);
+  }
 }
